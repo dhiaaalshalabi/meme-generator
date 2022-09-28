@@ -30,8 +30,6 @@ workflows:
   heroku_deploy:
     jobs:
       - build:
-          requires:
-            - build
           filters:
             branches:
               only:
