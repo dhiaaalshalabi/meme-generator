@@ -25,3 +25,12 @@ jobs:
           key: app-build-cache-{{ .Branch }}
           paths:
             - ./build
+
+workflows:
+  heroku_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only:
+                - master
