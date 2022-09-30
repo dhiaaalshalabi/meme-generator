@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
-import Meme from './components/Meme';
+// import Meme from './components/Meme';
 import Box from './components/Box';
 import './App.css'
 import boxes from "./boxes"
@@ -18,7 +18,7 @@ function App() {
   }
 
   const squareElements = squares.map(square => (
-    <Box key={square.id} id={square.id} on={square.on} handleClick={toggle} />
+    <Box key={square.id} on={square.on} toggle={() => toggle(square.id)} />
   ))
 
   return (

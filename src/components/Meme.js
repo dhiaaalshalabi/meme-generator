@@ -8,7 +8,7 @@ function Meme() {
         randomImg: 'http://i.imgflip.com/1bij.jpg',
     })
 
-    const [allMemeImgs, setAllMemeImgs] = React.useState(memesData)
+    const [allMemeImgs] = React.useState(memesData)
 
     function getMemeImage() {
         const memesArray = allMemeImgs.data.memes
