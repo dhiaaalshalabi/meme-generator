@@ -14,7 +14,6 @@ export default function Form() {
     )
 
     function handleChange(event) {
-        console.log(event)
         const { name, value, type, checked } = event.target
         setFormData(prevFormData => {
             return {
@@ -24,8 +23,13 @@ export default function Form() {
         })
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+        console.log(formData)
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
                 placeholder="First Name"
@@ -118,6 +122,7 @@ export default function Form() {
                 <option value="indigo">Indigo</option>
                 <option value="violet">Violet</option>
             </select>
+            <button>Submit</button>
         </form>
     )
 }
